@@ -1,59 +1,27 @@
-# NodeJS Nguyễn trung Duy Tân CD-CNTT18A
-Bài thực hành môn Phát triển ứng dụng web hướng máy chủ - Node.js và MongoDB.
-1. Mục tiêu
 
-Tìm hiểu tổng quan về Node.js và MongoDB.
+# Bài 1 - Quản lý thông tin sinh viên bằng JavaScript ES6
 
-Thực hành chạy chương trình JavaScript bằng Node.js.
+## 1. Mục tiêu
+- Sử dụng class và constructor để biểu diễn sinh viên.
+- Khai báo danh sách 5 sinh viên.
+- Sử dụng arrow function để lọc sinh viên có điểm từ 5 trở lên.
+- Hiển thị kết quả bằng console.log().
 
-Tạo máy chủ HTTP đơn giản.
+## 2. Các bước thực hiện
+1. Tạo file bai01.js.
+2. Khai báo class SinhVien với mã, họ tên, tuổi và điểm.
+3. Tạo danh sách gồm 5 sinh viên.
+4. Sử dụng filter() kết hợp arrow function để lọc sinh viên đạt yêu cầu.
+5. Chạy chương trình bằng Node.js.
 
-Làm quen với MongoDB và công cụ MongoDB Compass.
+## 3. Lệnh chạy
+node bai01.js
 
-2. Nội dung thực hành
+## 4. Kết quả
+Chương trình hiển thị 3 sinh viên đạt yêu cầu:
+- SV001 - Nguyen Van An - 8 điểm
+- SV003 - Le Van Cuong - 6.5 điểm
+- SV005 - Nguyen Trung Duy Tan - 9 điểm
 
-Bài 01: Tổng quan Node.js và MongoDB
-
-Kiểm tra phiên bản Node.js và npm.
-
-Tạo và chạy chương trình hello.js.
-
-Ghi nhận kết quả thực hiện.
-
-Bài 02: Viết ứng dụng Node.js đầu tiên
-
-Sử dụng module http để tạo máy chủ.
-
-Tiếp nhận yêu cầu từ trình duyệt và gửi phản hồi.
-
-Chạy máy chủ tại cổng 8080.
-
-Kiểm tra kết quả tại http://localhost:8080.
-
-Thực hành MongoDB
-
-Cài đặt MongoDB Server và MongoDB Compass.
-
-Kết nối đến MongoDB chạy trên máy tính cá nhân.
-
-Thực hành theo nội dung giáo trình.
-
-3. Cấu trúc dự án hiện tại
-
-hello.js: chương trình Hello World.
-
-myFirstNode.js: máy chủ HTTP sử dụng Node.js.
-
-MGDB/: các tệp thực hành MongoDB.
-
-4. Công nghệ sử dụng
-
-Node.js
-
-npm
-
-MongoDB
-
-MongoDB Compass
-
-Git và GitHub
+## 5. Minh chứng
+Chèn ảnh chụp màn hình Terminal chạy thành công tại đây.
