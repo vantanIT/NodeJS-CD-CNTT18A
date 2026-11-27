@@ -1,0 +1,76 @@
+
+doctype html
+html(lang="vi")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title To-Do List | Express MVC
+    style.
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+      }
+      .container {
+        max-width: 760px;
+        margin: 50px auto;
+        padding: 30px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px #00000010;
+      }
+      h1 { text-align: center; color: #2563eb; }
+      .subtitle { text-align: center; color: #64748b; }
+      form.add-form { display: flex; gap: 10px; margin: 25px 0; }
+      input[type="text"] {
+        flex: 1; min-width: 0; padding: 12px;
+        border: 1px solid #cbd5e1; border-radius: 8px;
+      }
+      button {
+        border: 0; border-radius: 8px; padding: 10px 14px;
+        cursor: pointer; color: white;
+      }
+      .add-btn { background: #2563eb; }
+      .complete-btn { background: #16a34a; }
+      .delete-btn { background: #dc2626; }
+      ul { list-style: none; padding: 0; }
+      li {
+        display: flex; align-items: center; gap: 10px;
+        padding: 14px 0; border-bottom: 1px solid #e2e8f0;
+      }
+      .task-title { flex: 1; overflow-wrap: anywhere; }
+      .done { color: #64748b; text-decoration: line-through; }
+      .actions { display: flex; gap: 8px; }
+      .empty { text-align: center; color: #64748b; padding: 20px; }
+      @media (max-width: 520px) {
+        .container { margin: 16px; padding: 20px; }
+        form.add-form { flex-direction: column; }
+        li { align-items: flex-start; flex-wrap: wrap; }
+        .actions { margin-left: auto; }
+      }
+  body
+    .container
+      h1 To-Do List
+      p.subtitle Quản lý công việc của bạn
+
+      form.add-form(action="/add" method="POST")
+        input(type="text" name="title" placeholder="Nhập công việc cần làm..." required)
+        button.add-btn(type="submit") Thêm công việc
+
+      h2 Danh sách công việc
+      if tasks.length === 0
+        p.empty Chưa có công việc nào. Hãy thêm công việc mới!
+      else
+        ul
+          each task in tasks
+            li
+              span.task-title(class=task.completed ? 'done' : '')
+                = task.title
+              .actions
+                if !task.completed
+                  form(action=`/complete/${task.id}` method="POST")
+                    button.complete-btn(type="submit") Hoàn thành
+                form(action=`/delete/${task.id}` method="POST")
+                  button.delete-btn(type="submit") Xóa
